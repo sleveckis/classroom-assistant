@@ -1,0 +1,21 @@
+Docstrings:
+    Param:
+    Called By:
+    Calls:
+    Modifies/Side effects:
+    Return:
+    Description:
+
+Naming:
+    Functions = camelCase
+    Vars      = var_name
+    Globals   = GLOBAL
+    Private   = __var
+    Protected = _var
+
+Debugging:
+    Add __debug__() method in order to add debug option
+        Source: https://stackoverflow.com/questions/13352677/python-equivalent-for-ifdef-debug
+
+
+

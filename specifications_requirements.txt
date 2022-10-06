@@ -1,0 +1,109 @@
+Documentation:
+    Date: 1/5/2022
+    Time: 12:00-
+    Members Present: Jaeger J., Nick J. 
+    Purpose of Meeting: read and discuss project handout, make note of specifications
+
+Key: 
+    CCS     Cold Call System
+    (#)     Bullet number for case
+    *       Mandatory Subconditions
+    ->      Option/possible add-on or interpretation or implementation options
+
+
++++++++++++++++++++++++
+| Use Case-based Reqs:| (See Use Cases, pg. 3-4 of Handout)
++++++++++++++++++++++++
+
+    Use Case A:
+    (4) On-deck display should be at the forefront, never hidden by other focused windows (think Zoom-style bar)
+            -> On-deck may be hidden from screensharing or presentations but remain visible on host system
+            -> Flagging of students may be hidden from class for discrete marking
+    (5) System "re-jumbles" names between runs (maintains randomness)
+            -> On-deck students from previous run may continue as On-deck for current run until removed?
+    (7) Arrow Key Input or Numeric Key Input for interaction
+    (8) Visual representation of On-deck is a queue-like gui; removed students cause "shift-down" of remaining On-deck students and new student is
+        added to the end
+    (9) Highlight students that are flagged and provide contact info adjacent to name
+
+    Use Case B:
+    (1-3) Generate log files containing student info for flagged and cold-called students
+    
+    Use Case C:
+    (1) Tab-delimited input for roster
+    (3) List changes to roster after reading new input
+        *If changes are accepted then overwrite old roster to include changes
+        *Maintain data for unmodified student entries
+
+    Use Case D:
+    (1) Long-term/multi-run performance/review file (different from log files)
+        -> Updated at the end of each run prior to shutdown
+        *Tab delimited
+        *Formatted performance data (see pg. 4)
+    (4) -> maybe have formula built in
+        
+    Use Case E:
+    (3-5) Should incorporate student photos as a roster in addition to or as another option for last names
+
+
++++++++++++++++++++++++++++++++++
+| Instructor-System Interaction |
++++++++++++++++++++++++++++++++++
+
+Input Options: 4.1, 4.5
+        Arrow Keys: (Preferred)
+            *Left key starts inverted text highlighting of GUI On-Deck roster from left, right arrow key from right
+            *Highlighting on GUI reflects movement with L and R arrow keys 
+            *Down arrow key removes from list
+            *Up arrow key removes from list and flags student
+            -> option for undo key stroke?
+
+        Numeric Keys:
+           *Keys 1-4 relate to positions in On-Deck Queue 
+           *Pressing number removes student from On-Deck
+           *Pressing <flag-key> within time limit after pressing 1,2,3,4 flags that student
+           *Flag key includes all of the following: <Q> <W> <E> <R>
+
+        *All numerical parameters and all keystroke assignments should be at tope of a source code file (and easily changeable by a programmer during
+         development and maitenance of code)
+        *Key-mappings should be easily changeable
+            -> read key mappings from config file
+
+
+Application Activity: 4.2
+        *CCS must sit in the background to allow use of other applications
+        *CCS GUI must sit in the foreground while other applications are open
+            -> consider Zoom-like pop-out
+
+Display: 4.3, 5.2
+        *GUI is a compact horizontal list of names that appears at top of the screen
+        *Follows format: <first><last> <first><last> <first><lasst> <first><last>
+        *Student ID numbers should never be displayed
+
+Roster Input/Output: 4.4, 4.5
+        *CCS includes command to import a file and a command to output a file
+        *CCS will check formatting of imported file and if incorrect, not load file, and output usefule error message
+        *CCS should allow changes from tab-delimited files to comma-delimited files "by modifying only 1 line of source code and by converting each
+         tab to a comma in each data file"
+
+
+++++++++++++++++++++
+| Data Constraints |    
+++++++++++++++++++++
+    Student Ordering: 5.1, 5.2
+        *Student order will be randomized
+        *After being called on, student will be removed from the front of the queue and placed in the back n% of the queue (where n is configurable
+         at the top of the file) to delay their reentry into the On-Deck portion of the queue.
+        *n should be set to create equal distribution across runs
+        *Every student from the roster should be in the queue
+        *Number of students should not cause issues
+        
+
+
+
+
+
+
+
+
+

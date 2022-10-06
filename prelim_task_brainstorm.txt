@@ -1,0 +1,29 @@
+Data structs to hold students: 
+    *Dictionary with nodes
+        -> node contains: name, time since selection, flagged status, message
+
+Saving protocol (for existing data structure ordering)
+    -> save as local program file and then read in to data struct on boot-up
+
+GUI 
+    -> library
+    -> configuration for library
+    -> design 
+    -> clicks, buttons for interaction
+
+Button config scripts
+
+Install scripts for additional packages (check for updates, install necessary packages)
+    -> maybe allow to sense system architecture
+
+Randomization algorithm
+    -> maybe based on # questions answered
+Flagging algorithm
+    -> flag if student is on deck for certain amount of time (meaning they are avoiding Qs)
+    -> flag if sutdent has low number or quality of Qs
+Notes for students
+Cloud/online backup? EXTRA
+
+
+
+

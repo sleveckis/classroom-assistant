@@ -1,0 +1,4 @@
+*.pyc
+__pycache__
+MetaData/
+.saved_boot.txt

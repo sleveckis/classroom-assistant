@@ -1,0 +1,46 @@
+File:                           Comment:
+ALL                             We should do docstrings like we did in the SDS
+                                    Called By:
+                                    Modifies:
+                                    Returns:
+                                    Description:
+
+Instructorinterface.py          import tkinter as tk but also import *, can probably do one or the other, preferably import only what we need
+
+FileIO.py                       I like the limited imports, lets use only what we NEED
+
+FileIO.py                       May not need to name the functions _name(); they aren't private or protected members
+
+FileIO.py                       We should consider just pattern matching for an initial roster, otherwise we require the user to have their roster
+line: 28                        named "initial_roster.txt" which isn't a common Non-CS naming convention
+
+FileIO.py                       Define global option for tab or comma, then just throw that in the call to split()
+line: 34                        Use list comprehensions
+
+Student.py                      May need to make member vars protected and only use the module interface to alter them
+
+Classroom.py                    Comments need some refining/to be made more clear (docstrings may help this)
+
+Classroom.py                    consider moving pre and post deck init loop to a private method
+
+Classroom.py                    Make init and maitenance methods (those called only by the class by itself) private
+
+Classroom.py                    set spoken = False and then flick to True if s[6] == "True", eliminate else
+line: 27-28
+
+Classroom.py 
+line(s): 67-69                  self.deck.append(self.preDeck.pop(random.randint(...)))
+                                *No need to do the weird remove call here
+
+Classroom.py                    Remove testing prints or add debug statements that are toggleable
+                                https://stackoverflow.com/questions/13352677/python-equivalent-for-ifdef-debug
+
+Classroom.py                    moveToPost(): flag=0?? flag is a bool; flag also isn't used by this function
+
+Instructorinterface.py          why import threading? why random?
+
+main.py                         data should come from FileIO calls
+
+
+Extra:
+README.md                       Make it pretty + descriptive

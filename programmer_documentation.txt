@@ -1,0 +1,149 @@
+Cold Calling System Software
+Programmer Documentation
+Calculations Overview
+
+1/19/2022
+
+This document describes the critical functionality of the Cold
+Calling System software to aid programmers who seek to modify 
+the code. Below are the five crucial sections detailed to save 
+the programmer time in understanding the motive and execution 
+of this program.
+
+1. Software Overview
+2. The Program Files
+3. Top-Level Procedures
+4. Lower-Level Procedures
+5. Major Data Structures
+6. Files Imported
+7. Files Exported
+
+
+1. SOFTWARE OVERVIEW
+______________________
+
+The cold calling system software assists a classroom instructor in 
+accurately and persistently displaying a group of four students
+at a time, referred to as the "deck", which appears as a thin
+black bar window at both the top and topmost application layer
+(will never be obscured by other windows) of the user's screen.
+
+Students displayed "on deck" are encouraged to participate in classroom 
+discussion, and will be removed, via manual key entry (Up) by 
+the instructor, from the deck upon doing so. Upon removal:
+
+    1) All students "on deck" to the right of the removed student 
+will shift left, and the newly-created rightmost slot will be filled 
+by a new student at random from the "pre-deck": a list of students 
+who have not been "on deck" yet this class period.
+
+    2) The removed student will be sent to a "post-deck", or a list
+of students who have already spoken this class period. 
+
+    3) Additionally, any student removed with the Down key instead
+of the Up key will be flagged for instructor purposes, reflected
+in the output log file. Students will not be flagged if the Up
+key is used for removal from the deck by the instructor.
+
+In the event that all students have spoken once this class period,
+the pre-deck is re-populated by the entirety of the post-deck,
+starting the cycle anew.
+
+Upon program initialization, the user will be prompted to upload
+a .txt roster file if none is found. The software expects fields
+to be in a specific order, delimited by a <tab> character. 
+(See 6. Files Imported for more information)
+
+Upon program termination, log and performance files are created
+for instructor records and perusal. 
+(See 7. Files Exported for more detail)
+
+
+2. THE PROGRAM FILES
+______________________
+
+main.py - 			The main driver for the entire program. 
+				Class objects from other files and 
+				relevant methods are instantiated
+				and called here. Presents entire
+				program functionality through
+				class and method abstraction.   
+
+Student.py - 			sdfsdfsd
+
+classroom.py -			ddddd
+
+FileIO.py - 			ddddd
+
+InstructorInterface.py - 	The GUI interface code. Contains 
+				roster initialization, key event,
+				and all GUI code, encapsulated
+				in the InstructorInterface
+				class. All code from this file
+				is called in main.py.  
+				
+
+
+3. TOP-LEVEL PROCEDURES 
+______________________
+
+
+4. LOWER-LEVEL PROCEDURES
+______________________
+
+
+
+5. MAJOR DATA STRUCTURES
+______________________
+
+list[Student] roster - 		Initial master roster built from
+				list of strings containing
+				student information, created
+				by FileIO.py and passed to 
+				Classroom.py.
+
+list[Student] preDeck -		List of students who haven't
+				yet spoken this class session.	
+				Built in Classroom.py from the
+				roster data structure.
+
+list[Student] deck - 		List of four students who are 
+				currently on deck. Created by
+				Classroom.py and modified by
+				InstructorInterface.py as
+				students are removed from the
+				deck.	
+
+list[Student] postDeck -  	List of students who have already
+				spoken this class session. Modified
+				by Classroom.py via a call from
+				InstructorInterface.py when a key
+				event occurs to remove a student
+				from the deck (and move them to
+				the Post Deck). 	
+
+
+6. FILES IMPORTED
+______________________
+
+initial_roster.txt - 		An initial .txt file supplied by the
+				user via a GUI file explorer and 
+				prompt if no initial_roster.txt
+				is detected by the program. 
+				Holds data in the specific format:
+				<first_name> <tab> <last_name>
+				<tab> <UO_ID> <tab> <email>
+				<tab> <phonetic_spelling> <tab>
+				<reveal_code> <\n>
+				It is acceptable if the final two 
+				fields do not exist, but all others
+				are mandatory and required. 
+
+
+7. FILES EXPORTED
+______________________
+
+
+
+
+

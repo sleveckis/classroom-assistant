@@ -1,0 +1,31 @@
+Documentation:
+Date: 01/05/2022
+Time: 12:30 PM - 12:55 PM
+Members: Nick J., Jaeger J. 
+
+Met with Professor Hornof about specifications:
+    *Want to use data to incentivise total class participation
+    *Keep track of overall participation of each student
+    *Diversity and inclusion
+        -> Perhaps prioritize low-participation students for On-Deck position
+    *PRIORITY = get people to talk
+    *Flag + log students
+        -> flash of green for students who participate well, but no bad flashes
+    *Develop for Mac OS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
